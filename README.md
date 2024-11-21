@@ -1,24 +1,29 @@
 # CURE: Context and Uncertainty-Aware Mental Disorder Detection [EMNLP 2024]
 
-This is the official implementation of "CURE: Context and Uncertainty-Aware Mental Disorder Detection" accepted in The 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP, 2024). The paper is available at [https://aclanthology.org/2024.emnlp-main.994/].
+This is the official implementation of "CURE: Context and Uncertainty-Aware Mental Disorder Detection" accepted in The 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP, 2024). The paper is available at [Here](https://aclanthology.org/2024.emnlp-main.994/).
 
-## News 
+## ✔️ News 
 🎉 September 2024, Paper accepted at EMNLP 2024 🎉
 
-## Requirements 
+## ✔️ Requirements 
 - torch==2.3.1
 - tensorflow==2.14.0
 - transformers==4.41.2
 
-## Data Preparation
+## ✔️ Data Preparation
 Our dataset KoMOS (Korean Mental Health Dataset with Mental Disorder and Symptoms labels) is publicly available in this repository. If you use this dataset, please make sure to cite our work.
 
+### Data Example
+![image](https://github.com/user-attachments/assets/a80e05b4-6760-4f99-b256-155b0733caa3)
+In our dataset, each data instance consists of a pair: a question from a user discussing their mental health problem and an answer from a psychiatrist providing a diagnosis.
 
-## Model Architecture
+## ✔️ Model Architecture
 CURE consists of three main components:
 1. Feature Extraction
 2. Model Prediction
 3. Uncertainty-aware Decision Fusion
+
+![image](https://github.com/user-attachments/assets/45886547-36ea-4ad2-a44f-7375ab915454)
 
 ### 1. Feature Extraction
 For convenience, we provide pre-extracted features in the dataset. However, if you want to extract features from scratch, follow these steps:
@@ -57,8 +62,8 @@ bash scripts/run_disease_detection_cure.sh
 ```
 
 
-## Citation
-```bibtex
+## ✔️ Citation
+```
 @inproceedings{
   kang2024cure,
   title={CURE: Context-and Uncertainty-Aware Mental Disorder Detection},
