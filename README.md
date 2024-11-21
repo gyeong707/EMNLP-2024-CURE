@@ -7,7 +7,6 @@ This is the official implementation of "CURE: Context and Uncertainty-Aware Ment
 
 ## ✔️ Requirements 
 - torch==2.3.1
-- tensorflow==2.14.0
 - transformers==4.41.2
 
 ## ✔️ Data Preparation
