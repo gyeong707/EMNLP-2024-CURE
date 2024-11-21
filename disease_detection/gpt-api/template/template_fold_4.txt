@@ -1,0 +1,77 @@
+INSTRUCTION
+You're a mental health professional.
+Based on the questions given, infer the disorder the user is currently experiencing. 
+Your inference should be based on DSM-5 diagnostic criteria.
+The inference results are displayed separately for each of the five categories. 
+The five categories include four mental illnesses (depression disorders, anxiety disorders, sleep disorders, and eating disorders) and Non-Disease.
+Non-Disease can include cases where the user appears to be experiencing a condition outside of the four target conditions, or where it is unknown what condition the user is experiencing, or cases where the user has psychiatric symptoms but is not considered a mental illness.
+Here are some examples.
+
+EXAMPLE1
+Question: 평소에 학원가고 주로 활동할때인 낮에는 엄청 졸리고 밤이나 새벽에 오히려 잠이 안오고 자려고 누워도 잠이 잘 안와요. 오늘 새벽 3시쯤 자려고 누웠는데 계속 생각하는 느낌이고 자는거 같지가 않아서 시간을 확인해보니 7시30분이더라고요. 일어나보니까 눈이 너무 건조하네요. 좀 깊게 잔것 같은날은 아무리 오래자도 일어나기가 너무 힘들고 일어나도 1~2시간정도는 계속 졸게되요. 무슨증상일까요..?
+Answer:
+Depression: 0
+Anxiety: 0
+Sleep: 1
+Eating: 0
+Non-Disease: 0
+
+EXAMPLE2
+Question: 2년전 무리한 다이어트를 한 후로 계속해서 폭식증에 시달리고 있습니다. 그 때 식이조절과 운동으로 8키로를 뺐었는데 그 뒤로 다시 살이 찔까봐 두려워서 평소에는 잘 안먹지않고 주말마다 집에 오면 미친듯이 먹었습니다. 집에 있으면 배가 불러도, 음식이 없어질 때까지 조절을 할 수 없을 정도로 먹습니다.   배가 터질 때까지 폭식하고 속이 더부룩해서 위장약 먹고(구토는 안합니다), 변비약으로 장 비워내고 다시 다음날 또 폭식하고,, 그래서 집에 온지 2주만에 6키로가 쪘습니다. 살이 찌니까 거울 볼 때마다 짜증나고 밖에 나가기도 싫고 친구들 만나기도 싫고 하루종일 우울해요. 내일부터 안먹고 운동만해야지 하고 또 일어나자마자 먹고 몸이 무거우니까 운동은 커녕 또 다시 집에만 있게되고.. 제 자신이 너무 한심스럽습니다 ㅜ
+Answer:
+Depression: 1
+Anxiety: 0
+Sleep: 0
+Eating: 1
+Non-Disease: 0
+
+EXAMPLE3
+Question: 저 지금 중학교 1학년 입니다. 저는 지금 아주 힘든 생각으로 고통을 받고 있습니다. 자꾸 엄마를 죽이고 나까지 죽으면 끝 아닌가 하는 호기심이 자꾸 저를 이상하게 만듭니다. 전 참고로 건강 염려증을 가지고 있고 총게임을 하루에 3시간 정도 합니다. 그리고 남자아이고요. 진짜 고민 많이했는데 혹시 이거 정신 이상 있는건가요? 있다면 치료는 가능한가요? 답변 꼭 부탁드립니다.
+Answer:
+Depression: 0
+Anxiety: 0
+Sleep: 0
+Eating: 0
+Non-Disease: 1
+
+Now, it's your turn.
+Question:{question}
+Answer:INSTRUCTION
+You're a mental health professional.
+Based on the questions given, infer the disorder the user is currently experiencing. 
+Your inference should be based on DSM-5 diagnostic criteria.
+The inference results are displayed separately for each of the five categories. 
+The five categories include four mental illnesses (depression disorders, anxiety disorders, sleep disorders, and eating disorders) and Non-Disease.
+Non-Disease can include cases where the user appears to be experiencing a condition outside of the four target conditions, or where it is unknown what condition the user is experiencing, or cases where the user has psychiatric symptoms but is not considered a mental illness.
+Here are some examples.
+
+EXAMPLE1
+Question: 평소에 학원가고 주로 활동할때인 낮에는 엄청 졸리고 밤이나 새벽에 오히려 잠이 안오고 자려고 누워도 잠이 잘 안와요. 오늘 새벽 3시쯤 자려고 누웠는데 계속 생각하는 느낌이고 자는거 같지가 않아서 시간을 확인해보니 7시30분이더라고요. 일어나보니까 눈이 너무 건조하네요. 좀 깊게 잔것 같은날은 아무리 오래자도 일어나기가 너무 힘들고 일어나도 1~2시간정도는 계속 졸게되요. 무슨증상일까요..?
+Answer:
+Depression: 0
+Anxiety: 0
+Sleep: 1
+Eating: 0
+Non-Disease: 0
+
+EXAMPLE2
+Question: 2년전 무리한 다이어트를 한 후로 계속해서 폭식증에 시달리고 있습니다. 그 때 식이조절과 운동으로 8키로를 뺐었는데 그 뒤로 다시 살이 찔까봐 두려워서 평소에는 잘 안먹지않고 주말마다 집에 오면 미친듯이 먹었습니다. 집에 있으면 배가 불러도, 음식이 없어질 때까지 조절을 할 수 없을 정도로 먹습니다.   배가 터질 때까지 폭식하고 속이 더부룩해서 위장약 먹고(구토는 안합니다), 변비약으로 장 비워내고 다시 다음날 또 폭식하고,, 그래서 집에 온지 2주만에 6키로가 쪘습니다. 살이 찌니까 거울 볼 때마다 짜증나고 밖에 나가기도 싫고 친구들 만나기도 싫고 하루종일 우울해요. 내일부터 안먹고 운동만해야지 하고 또 일어나자마자 먹고 몸이 무거우니까 운동은 커녕 또 다시 집에만 있게되고.. 제 자신이 너무 한심스럽습니다 ㅜ
+Answer:
+Depression: 1
+Anxiety: 0
+Sleep: 0
+Eating: 1
+Non-Disease: 0
+
+EXAMPLE3
+Question: 저 지금 중학교 1학년 입니다. 저는 지금 아주 힘든 생각으로 고통을 받고 있습니다. 자꾸 엄마를 죽이고 나까지 죽으면 끝 아닌가 하는 호기심이 자꾸 저를 이상하게 만듭니다. 전 참고로 건강 염려증을 가지고 있고 총게임을 하루에 3시간 정도 합니다. 그리고 남자아이고요. 진짜 고민 많이했는데 혹시 이거 정신 이상 있는건가요? 있다면 치료는 가능한가요? 답변 꼭 부탁드립니다.
+Answer:
+Depression: 0
+Anxiety: 0
+Sleep: 0
+Eating: 0
+Non-Disease: 1
+
+Now, it's your turn.
+Question:{question}
+Answer:

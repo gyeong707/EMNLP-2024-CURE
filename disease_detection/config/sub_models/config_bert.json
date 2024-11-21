@@ -1,0 +1,63 @@
+{
+    "name": "BERT",
+    "mode": "sngp",
+    "dtype": "ours",
+    "n_gpu": 0,
+    "fold": 0,
+    "setting": "multi",
+    "session": "fold_0",
+    "resume": "",
+
+    "arch": {
+        "type": "BertMultiLabelClassification",
+        "args": {
+            "model_name": "klue/bert-base",
+            "num_labels": 5,
+            "dropout_ratio": 0.2,
+            "output": "pooler"
+        }
+    },
+    
+    "data_loader": {
+        "type": "BertDataset",
+        "max_length": 512,
+        "data_dir": "data/emnlp2024_submission_komos_dataset.csv",
+        "label_cols": "disease_idx",
+        "column_name": "pre_question",
+        "num_labels": 5,
+        "batch_size": 32
+    },
+
+    "optimizer": {
+        "type": "AdamW",
+        "args":{
+            "lr": 3e-5,
+            "eps": 1e-8
+        }
+    },
+
+    "loss": "bce_with_logits",
+
+    "metrics": {
+        "calculator": [
+        "accuracy", "precision", "recall", "f1score"
+    ],
+        "threshold": 0.5,
+        "target_name": ["Depression", "Anxiety", "Sleep", "Eating", "Non-Disease"]
+    },
+
+    "lr_scheduler": {
+        "use": true,
+        "warmup_proportion": 0.1
+    },
+    "trainer": {
+        "epochs": 7,
+        "save_dir": "saved/",
+        "save_period": 1,
+        "verbosity": 2,
+        "monitor": "min val_loss",
+        "early_stop": 3,
+        "tensorboard": false
+    }
+    
+}

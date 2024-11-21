@@ -1,0 +1,64 @@
+{
+    "name": "BertMultiLabelClassification",
+    "mode": "sngp",
+    "n_gpu": 1,
+    "fold": 0,
+    "session": "fold_0",
+
+    "arch": {
+        "type": "BertMultiLabelClassification",
+        "args": {
+            "model_name": "klue/bert-base",
+            "num_labels": 28,
+            "dropout_ratio": 0.2,
+            "output": "pooler"
+        }
+    },
+
+    "resume": "saved/models/BertMultiLabelClassification/fold_0/model_best.pth",
+
+    "data_loader": {
+        "type": "MultiLabelDataLoader",
+        "max_length": 512,
+        "data_dir": "data/emnlp2024_submission_komos_dataset.csv",
+        "dict_dir": "data/symptom_dictionary.json",
+        "label_cols": "symptom_idx",
+        "num_labels": 28,
+        "batch_size": 32,
+        "shuffle": true
+    },
+
+    "optimizer": {
+        "type": "AdamW",
+        "args":{
+            "lr": 5e-5,
+            "eps": 1e-8
+        }
+    },
+
+    "loss": "bce_with_logits",
+
+    "metrics": {
+        "calculator": [
+        "accuracy", "precision", "recall", "f1score"
+    ],
+        "threshold": 0.5,
+        "target_name": []
+},
+
+    "lr_scheduler": {
+        "use": true,
+        "warmup_proportion": 0.1
+    },
+
+    "trainer": {
+        "epochs": 30,
+        "save_dir": "saved/",
+        "save_period": 5,
+        "verbosity": 2,
+        "monitor": "min val_loss",
+        "early_stop": 10,
+        "tensorboard": true
+    }
+
+}

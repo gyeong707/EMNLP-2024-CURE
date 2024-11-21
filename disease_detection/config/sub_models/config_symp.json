@@ -1,0 +1,67 @@
+{
+    "name": "Symp",
+    "mode": "symp",
+    "dtype": "ours",
+    "n_gpu": 0,
+    "fold": 0,
+    "setting": "multi",
+    "symptom_cols": "symptom",
+    "symptom_nums": 28,
+    "session": "fold_0",
+    "resume": "",
+
+    "arch": {
+        "type": "Symp",
+        "args": {
+            "input_dim": 28,
+            "filter_num": 64,
+            "num_labels": 5,
+            "dropout": 0.2        }
+    },
+    
+    "data_loader": {
+        "type": "SympDataset",
+        "data_dir": "data/emnlp2024_submission_komos_dataset.csv",
+        "symptom_dir": "",
+        "label_cols": "disease_idx",
+        "column_name": "pre_question",
+        "num_labels": 5,
+        "batch_size": 64
+        },
+
+    "optimizer": {
+        "type": "AdamW",
+        "args":{
+            "lr": 0.01
+        }
+    },
+
+    "loss": "bce_with_logits",
+
+    "metrics": {
+        "calculator": [
+        "accuracy", "precision", "recall", "f1score"
+    ],
+        "threshold": 0.5,
+        "target_name": ["Depression", "Anxiety", "Sleep", "Eating", "Non-Disease"]
+    },
+
+    "lr_scheduler": {
+        "use": false,
+        "warmup_proportion": 0.1
+    },
+    
+    "trainer": {
+        "epochs": 50,
+        "save_dir": "saved/",
+        "save_period": 1,
+        "verbosity": 2,
+        "monitor": "min val_loss",
+        "early_stop": 5,
+        "tensorboard": false
+    }
+
+}
+
+
+
